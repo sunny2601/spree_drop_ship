@@ -14,8 +14,10 @@
   <% if try_spree_current_user && try_spree_current_user.supplier? %>
     <%= link_to 'Stock Management', stock_admin_product_path(product), class: 'edit' if can?(:stock, product) && !product.deleted? %>
   <% else %>
+  &nbsp;
     <%= link_to_edit product, :no_text => true, :class => 'edit' if can?(:edit, product) && !product.deleted? %>
   <% end %>
+  <%= link_to_edit product, :no_text => true, :class => 'edit' if can?(:edit, product) && !product.deleted? %>
   &nbsp;
   <%= link_to_clone product, :no_text => true, :class => 'clone' if can?(:clone, product) %>
   &nbsp;
