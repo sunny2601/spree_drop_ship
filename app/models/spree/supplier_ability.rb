@@ -13,7 +13,7 @@ module Spree
           product.supplier_ids.include?(user.supplier_id)
         end
         can [:admin, :create], Spree::Product
-        can [:admin, :manage, :update], Spree::Product, suppliers: { id: user.supplier_id }
+        can [:admin, :update], Spree::Product, suppliers: { id: user.supplier_id }
         can [:admin, :manage], Spree::Image, suppliers: { id: user.supplier_id }
         can [:admin, :manage], Spree::Order, suppliers: { id: user.supplier_id }
         can [:admin, :manage], :stock_items, suppliers: { id: user.supplier_id }
